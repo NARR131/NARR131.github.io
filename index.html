@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50; /* Verde */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45a049; /* Color más oscuro al pasar el ratón */
+        }
+
+        .button:active {
+            background-color: #3e8e41; /* Aún más oscuro al hacer clic */
+        }
+
+        iframe {
+            width: 80%;
+            height: 80vh;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <button class="button" onclick="loadPDF('desarrollo_de_base_de_datos_evidencia.pdf')"width="100%" height="600px" style="border:none;">etapa 1</button>
+        <button class="button" onclick="loadPDF('evidencia_etapa_2.pdf')"width="100%" height="600px" style="border:none;">etapa 2</button>
+        <button class="button" onclick="loadPDF('DSWBD_E3.pdf')"width="100%" height="600px" style="border:none;">etapa 3</button>
+        <button class="button" onclick="loadPDF('evidencia_desarrollo_de_base_de_datos.pdf')" width="100%" height="600px" style="border:none;">etapa 4</button>
+    </div>
+
+    <div class="container">
+        <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+        
+    </div>
+
+    <script>
+        function loadPDF(pdf) {
+            document.getElementById('pdfViewer').src = pdf;
+        }
+    </script>
+
+</body>
+</html>
